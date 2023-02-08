@@ -11,5 +11,4 @@ jobs:
     - name: Run build
       run: |
        docker build . --tag ghcr.io/t-d-h/docker-busybox:latest
-       docker run ghcr.io/t-d-h/docker-busybox:latest
        docker push ghcr.io/t-d-h/docker-busybox:latest
