@@ -1,1 +1,1 @@
-while true; do printenv; sleep 2; done
+while true; do printenv; sleep 1; done
