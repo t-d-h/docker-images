@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: busybox
+  name: busybox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+        - command:
+            - /bin/bash
+          args:
+          - /usr/local/bin/shell.sh
+          imagePullPolicy: Always
+          image: ghcr.io/t-d-h/docker-busybox:latest
+          name: busybox
+          envFrom:
+          - secretRef:
+              name: project1-dev-secret
