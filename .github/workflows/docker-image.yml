@@ -14,7 +14,13 @@ jobs:
         password: ${{ secrets.ACCOUNT_TOKEN }}
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: Run build
-      run: docker build . --tag ghcr.io/t-d-h/docker-busybox:latest
+
+    - name: Run build busybox
+      run: docker build /busybox/ --tag ghcr.io/t-d-h/docker-busybox:latest
     - name: Push image
       run: docker push ghcr.io/t-d-h/docker-busybox:latest
+
+    - name: Run build nginx
+      run: docker build /nginx/ --tag ghcr.io/t-d-h/docker-nginx:versionA
+    - name: Push image
+      run: docker push ghcr.io/t-d-h/docker-nginx:versionA
