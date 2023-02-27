@@ -21,6 +21,6 @@ jobs:
       run: docker push ghcr.io/t-d-h/docker-busybox:latest
 
     - name: Run build nginx
-      run: docker build nginx/ --tag ghcr.io/t-d-h/docker-nginx:version1
+      run: docker build nginx/ --tag ghcr.io/t-d-h/docker-nginx:version2
     - name: Push image
-      run: docker push ghcr.io/t-d-h/docker-nginx:version1
+      run: docker push ghcr.io/t-d-h/docker-nginx:version2
